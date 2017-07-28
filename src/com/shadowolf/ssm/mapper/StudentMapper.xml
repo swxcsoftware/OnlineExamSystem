@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shadowolf.ssm.mapper.StudentMapper" >
+  <resultMap id="BaseResultMap" type="com.shadowolf.ssm.po.Student" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="uuid" property="uuid" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="stu_id" property="stu_id" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="VARCHAR" />
+    <result column="age" property="age" jdbcType="INTEGER" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="province_uuid" property="province_uuid" jdbcType="VARCHAR" />
+    <result column="city_uuid" property="city_uuid" jdbcType="VARCHAR" />
+    <result column="county_uuid" property="county_uuid" jdbcType="VARCHAR" />
+    <result column="school_uuid" property="school_uuid" jdbcType="VARCHAR" />
+    <result column="college_uuid" property="college_uuid" jdbcType="VARCHAR" />
+    <result column="create_date" property="create_date" jdbcType="TIMESTAMP" />
+    <result column="update_date" property="update_date" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, uuid, username, password, stu_id, name, sex, age, phone, email, province_uuid, 
+    city_uuid, county_uuid, school_uuid, college_uuid, create_date, update_date
+  </sql>
+  <select id="selectByUUID" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from student
+    where id = #{uuid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from student
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.shadowolf.ssm.po.Student" >
+    insert into student (id, uuid, username, 
+      password, stu_id, name, 
+      sex, age, phone, email, 
+      province_uuid, city_uuid, county_uuid, 
+      school_uuid, college_uuid, create_date, 
+      update_date)
+    values (#{id,jdbcType=INTEGER}, #{uuid,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{stu_id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{province_uuid,jdbcType=VARCHAR}, #{city_uuid,jdbcType=VARCHAR}, #{county_uuid,jdbcType=VARCHAR}, 
+      #{school_uuid,jdbcType=VARCHAR}, #{college_uuid,jdbcType=VARCHAR}, #{create_date,jdbcType=TIMESTAMP}, 
+      #{update_date,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.shadowolf.ssm.po.Student" >
+    insert into student
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="uuid != null" >
+        uuid,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="stu_id != null" >
+        stu_id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="age != null" >
+        age,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="province_uuid != null" >
+        province_uuid,
+      </if>
+      <if test="city_uuid != null" >
+        city_uuid,
+      </if>
+      <if test="county_uuid != null" >
+        county_uuid,
+      </if>
+      <if test="school_uuid != null" >
+        school_uuid,
+      </if>
+      <if test="college_uuid != null" >
+        college_uuid,
+      </if>
+      <if test="create_date != null" >
+        create_date,
+      </if>
+      <if test="update_date != null" >
+        update_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="uuid != null" >
+        #{uuid,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="stu_id != null" >
+        #{stu_id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null" >
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="province_uuid != null" >
+        #{province_uuid,jdbcType=VARCHAR},
+      </if>
+      <if test="city_uuid != null" >
+        #{city_uuid,jdbcType=VARCHAR},
+      </if>
+      <if test="county_uuid != null" >
+        #{county_uuid,jdbcType=VARCHAR},
+      </if>
+      <if test="school_uuid != null" >
+        #{school_uuid,jdbcType=VARCHAR},
+      </if>
+      <if test="college_uuid != null" >
+        #{college_uuid,jdbcType=VARCHAR},
+      </if>
+      <if test="create_date != null" >
+        #{create_date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="update_date != null" >
+        #{update_date,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.shadowolf.ssm.po.Student" >
+    update student
+    <set >
+      <if test="uuid != null" >
+        uuid = #{uuid,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="stu_id != null" >
+        stu_id = #{stu_id,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null" >
+        age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="province_uuid != null" >
+        province_uuid = #{province_uuid,jdbcType=VARCHAR},
+      </if>
+      <if test="city_uuid != null" >
+        city_uuid = #{city_uuid,jdbcType=VARCHAR},
+      </if>
+      <if test="county_uuid != null" >
+        county_uuid = #{county_uuid,jdbcType=VARCHAR},
+      </if>
+      <if test="school_uuid != null" >
+        school_uuid = #{school_uuid,jdbcType=VARCHAR},
+      </if>
+      <if test="college_uuid != null" >
+        college_uuid = #{college_uuid,jdbcType=VARCHAR},
+      </if>
+      <if test="create_date != null" >
+        create_date = #{create_date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="update_date != null" >
+        update_date = #{update_date,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.shadowolf.ssm.po.Student" >
+    update student
+    set uuid = #{uuid,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      stu_id = #{stu_id,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      age = #{age,jdbcType=INTEGER},
+      phone = #{phone,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      province_uuid = #{province_uuid,jdbcType=VARCHAR},
+      city_uuid = #{city_uuid,jdbcType=VARCHAR},
+      county_uuid = #{county_uuid,jdbcType=VARCHAR},
+      school_uuid = #{school_uuid,jdbcType=VARCHAR},
+      college_uuid = #{college_uuid,jdbcType=VARCHAR},
+      create_date = #{create_date,jdbcType=TIMESTAMP},
+      update_date = #{update_date,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
