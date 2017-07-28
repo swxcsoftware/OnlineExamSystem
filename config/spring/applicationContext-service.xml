@@ -26,6 +26,6 @@
             http://www.springframework.org/schema/util/spring-util.xsd">
 
     <!-- 配置各个service -->
-    <bean id="studentService" class="com.shadowolf.ssm.service.impl.StudentServiceImpl" />
+    <bean id="studentService" class="com.swxc.ssm.service.impl.StudentServiceImpl" />
 
 </beans>

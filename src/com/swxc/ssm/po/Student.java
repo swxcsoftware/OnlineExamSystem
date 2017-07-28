@@ -1,4 +1,4 @@
-package com.shadowolf.ssm.po;
+package com.swxc.ssm.po;
 
 import java.util.Date;
 

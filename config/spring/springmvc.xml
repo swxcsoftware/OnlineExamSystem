@@ -20,7 +20,7 @@
             http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
     <!-- 扫描Controller -->
-    <context:component-scan base-package="com.shadowolf.ssm.controller" />
+    <context:component-scan base-package="com.swxc.ssm.controller" />
 
     <!-- 使用mvc:annotation-driven可以代替注解映射器和注解适配器的配置 -->
     <mvc:annotation-driven />

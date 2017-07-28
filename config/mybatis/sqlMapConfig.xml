@@ -6,7 +6,7 @@
 
     <!-- 配置别名 -->
     <typeAliases>
-        <package name="com.shadowolf.ssm.po" />
+        <package name="com.swxc.ssm.po" />
     </typeAliases>
 
 </configuration>

@@ -1,11 +1,9 @@
-package com.shadowolf.ssm.service.impl;
+package com.swxc.ssm.service.impl;
 
-import com.shadowolf.ssm.mapper.StudentMapper;
-import com.shadowolf.ssm.po.Student;
-import com.shadowolf.ssm.service.StudentService;
+import com.swxc.ssm.mapper.StudentMapper;
+import com.swxc.ssm.po.Student;
+import com.swxc.ssm.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.UUID;
 
 /**
  * Description

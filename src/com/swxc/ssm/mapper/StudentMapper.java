@@ -1,6 +1,6 @@
-package com.shadowolf.ssm.mapper;
+package com.swxc.ssm.mapper;
 
-import com.shadowolf.ssm.po.Student;
+import com.swxc.ssm.po.Student;
 
 public interface StudentMapper {
     int deleteByPrimaryKey(Integer id);

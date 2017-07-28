@@ -1,8 +1,6 @@
-package com.shadowolf.ssm.service;
+package com.swxc.ssm.service;
 
-import com.shadowolf.ssm.po.Student;
-
-import java.util.List;
+import com.swxc.ssm.po.Student;
 
 /**
  * Description

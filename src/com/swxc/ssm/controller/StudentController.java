@@ -1,12 +1,10 @@
-package com.shadowolf.ssm.controller;
+package com.swxc.ssm.controller;
 
-import com.shadowolf.ssm.po.Student;
-import com.shadowolf.ssm.service.StudentService;
+import com.swxc.ssm.po.Student;
+import com.swxc.ssm.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
